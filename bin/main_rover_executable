@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-class MarsRover
-  def rover_on_mars
-    'Rover on Mars!'
-  end
+require 'colorize'
+
+def intro_display
+  'Mars Rovers'
 end

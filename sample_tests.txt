@@ -1,0 +1,45 @@
+
+rover = Rover.new('1 2 N')
+puts '************INITIALMOVES************'
+puts rover.render_specific_attr('x')
+puts rover.render_specific_attr('y')
+puts rover.render_specific_attr('p')
+puts '************VALUES AFTER MOVE LEFT************'
+rover.rover_instructions('LMLMLMLMM')
+# 0 2 W
+# 0 1 S
+# 1 1 E
+# 1 3 N
+puts rover.render_specific_attr('x')
+puts rover.render_specific_attr('y')
+puts rover.render_specific_attr('p')
+
+print '1 3 N'
+puts ''
+
+# 1 2 N
+
+# LMLMLMLMM
+
+# 1 3 N output one
+
+# 3 3 E
+
+# MMRMMRMRRM
+
+# 5 1 E output 2
+
+rover2 = Rover.new('3 3 E')
+puts '==============================='
+puts '>>>>>>>>>>>>************INITIALMOVES************<<<<<<<<<<<<<<'
+puts rover2.render_specific_attr('x')
+puts rover2.render_specific_attr('y')
+puts rover2.render_specific_attr('p')
+
+puts '*************VAUES AFTER MOVE RIGHT***********'
+rover2.rover_instructions('MMRMMRMRRM')
+puts rover2.render_specific_attr('x')
+puts rover2.render_specific_attr('y')
+puts rover2.render_specific_attr('p')
+
+print '5 1 E'
