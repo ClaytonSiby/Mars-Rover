@@ -1,7 +1,85 @@
 #!/usr/bin/env ruby
 
 require 'colorize'
+require_relative '../lib/mars_rover'
 
-def intro_display
-  'Mars Rovers'
+def mars_intro_logo
+  "\n\n
+  #{' ' * 25} ███╗░░░███╗░█████╗░██████╗░░██████╗    ██████╗░░█████╗░██╗░░░██╗███████╗██████╗░
+  #{' ' * 25} ████╗░████║██╔══██╗██╔══██╗██╔════╝    ██╔══██╗██╔══██╗██║░░░██║██╔════╝██╔══██╗
+  #{' ' * 25} ██╔████╔██║███████║██████╔╝╚█████╗░    ██████╔╝██║░░██║╚██╗░██╔╝█████╗░░██████╔╝
+  #{' ' * 25} ██║╚██╔╝██║██╔══██║██╔══██╗░╚═══██╗    ██╔══██╗██║░░██║░╚████╔╝░██╔══╝░░██╔══██╗
+  #{' ' * 25} ██║░╚═╝░██║██║░░██║██║░░██║██████╔╝    ██║░░██║╚█████╔╝░░╚██╔╝░░███████╗██║░░██║
+  #{' ' * 25} ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░    ╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝\n\n
+  ".blue
 end
+
+def render_instructions
+  marks_explanation = [
+    "#{' ' * 37} 1) x => represents the x_coordinate position of the rover",
+    "#{' ' * 37} 2) y => represents the y_coordinate position of the rover",
+    "#{' ' * 37} 3) p => represents the compas direction the rover is facing"
+  ]
+
+  puts "#{' ' * 37} Your initial input should be in the format 'x y p' \n\n".red
+
+  marks_explanation.each { |item| puts "#{item}\n\n" }
+
+  puts "#{' ' * 37} ==================================================== \n\n"
+
+  puts "#{' ' * 37} 4) Lastly, enter rover movement/navigation instrutions in the format 'LMLMLMMLM' \n\n".red
+end
+
+def user_input
+  puts "#{' ' * 37} Enter initial coordinates for the rover position as instructed abover > >"
+  gets.chomp!
+end
+
+def start_the_rover_operation
+  if user_input.is_a? String
+    rover = Rover.new(user_input)
+    x_coordinate = rover.render_specific_attr('x_coordinate')
+    y_coordinate = rover.render_specific_attr('y_coordinate')
+    compas_direction = rover.render_specific_attr('compas_point')
+    puts "#{' ' * 37} The initial position of the rover is: => #{x_coordinate} #{y_coordinate} #{compas_direction}"
+
+    puts "#{' ' * 37} Enter instructions to move the rover around >> "
+    instructions = gets.chomp!
+
+    rover.rover_instructions(instructions)
+
+    puts "#{' ' * 37} The final position and facing direction of the rover is:"
+
+    new_x_value = rover.render_specific_attr('x_coordinate')
+    new_y_value = rover.render_specific_attr('y_coordinate')
+    new_direction = rover.render_specific_attr('compas_point')
+
+    puts "#{new_x_value} #{new_y_value} #{new_direction}".green
+
+    puts "#{' ' * 37} Exiting rover terminal window . . .".red
+  else
+    puts "#{' ' * 37} Invalid input, please make sure you read the instruction carefully".yellow
+    user_input
+  end
+end
+
+def mars_rover_user_guide
+  puts mars_intro_logo
+  puts "#{' ' * 37} Welcome, please read carefully, the instructions below: \n".upcase.yellow
+
+  render_instructions
+
+  sleep 0.3
+
+  puts "#{' ' * 37} Please type (Y/N) to proceed or cancel the operation respectively > > >"
+  user_choice = gets.chomp
+
+  if user_choice == 'Y'
+    start_the_rover_operation
+  else
+    puts "#{' ' * 37} You have terminated the rover operations window".green
+    exit
+  end
+end
+
+mars_rover_user_guide
