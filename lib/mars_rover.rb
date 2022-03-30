@@ -15,6 +15,8 @@ class Rover
       @compas_cardinal_point = 'N'
     when 'W'
       @compas_cardinal_point = 'S'
+    else
+      'Cardinal point value not recognized'
     end
   end
 
@@ -28,6 +30,8 @@ class Rover
       @compas_cardinal_point = 'S'
     when 'W'
       @compas_cardinal_point = 'N'
+    else
+      'Cardinal point value not recognized'
     end
   end
 
@@ -55,11 +59,11 @@ class Rover
 
   def render_specific_attr(the_attr)
     case the_attr
-    when 'x'
+    when 'x_coordinate'
       @x_coordinate
-    when 'y'
+    when 'y_coordinate'
       @y_coordinate
-    when 'p'
+    when 'compas_point'
       @compas_cardinal_point
     else
       'Command not recognized, try again!'
