@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require 'mars_rover'
 
 describe Rover do
