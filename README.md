@@ -19,6 +19,7 @@ In order to control a rover, NASA sends a simple string of letters. The possible
 Assume that the square directly North from (x, y) is (x, y+1).
 ```
 
+### Sample project output image:
 ![screenshot](/images/mars_rover_screenshot.png)
 
 ## Local Configuration:
