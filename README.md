@@ -23,7 +23,7 @@ Assume that the square directly North from (x, y) is (x, y+1).
 
 ## Local Configuration:
 
->> Follow the below steps to configure and get the application running on your local machine:
+> Follow the below steps to configure and get the application running on your local machine:
 ```
 git clone https://github.com/ClaytonSiby/Mars-Rover.git
 ```
@@ -51,3 +51,29 @@ to see the details about which tests-cases are running or run all tests, run the
 ```
 bundle exec rspec --format documentation
 ```
+
+## About Author 
+
+👤 **Clayton Siby**
+​
+
+- Github: [@ClaytonSiby](https://github.com/ClaytonSiby)
+   
+- Linkedin: [Clayton Siby](https://www.linkedin.com/in/clayton-siby/)
+
+- Twitter: [@ClaytonSiby](https://twitter.com/ClaytonSiby)
+
+## :handshake: Contributing 
+
+* Contributions, issues and feature requests are welcome!
+> Feel free to check the [issues page](https://github.com/ClaytonSiby/Mars-Rover/issues)
+- To contribute to this project:
+- Fork this repository & clone locally.
+- Create an upstream remote and sync your local copy.
+- Create a new branch.
+- Push your code to your origin repository.
+- Create a new Pull Request .
+
+## Show your support
+
+Give a ⭐️ if you like this project!
