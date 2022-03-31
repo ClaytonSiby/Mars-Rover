@@ -35,12 +35,27 @@ navigate to the /Mars-Rover directory by typing the below command and pressing E
 cd /Mars-Rover
 ```
 
+#### Project directory structure:
+
+```
+/bin => holds the main executable file to run and render the output on the terminal
+/lib => contains the logic file holding the Rover class which defines the Rover attributes and actions
+/spec => contains the tests for the whole project
+/images => images used in the README.md
+/.github => linters configuration
+```
+
 ## Gem/Dependancy installation:
 
 > All dependancies a defined in the Gemfile, run the following command to make sure they are installed locally:
 
 ```
 bundle install
+```
+
+> to run the application type the following on the terminal and press Enter:
+```
+cd ./bin/ && ruby manin_rover_executable.rb
 ```
 
 ## Run tests with Rspec:
