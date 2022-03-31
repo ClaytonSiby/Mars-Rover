@@ -1,10 +1,5 @@
 
 rover = Rover.new('1 2 N')
-puts '************INITIALMOVES************'
-puts rover.render_specific_attr('x')
-puts rover.render_specific_attr('y')
-puts rover.render_specific_attr('p')
-puts '************VALUES AFTER MOVE LEFT************'
 rover.rover_instructions('LMLMLMLMM')
 # 0 2 W
 # 0 1 S
@@ -29,17 +24,10 @@ puts ''
 
 # 5 1 E output 2
 
-rover2 = Rover.new('3 3 E')
-puts '==============================='
-puts '>>>>>>>>>>>>************INITIALMOVES************<<<<<<<<<<<<<<'
-puts rover2.render_specific_attr('x')
-puts rover2.render_specific_attr('y')
-puts rover2.render_specific_attr('p')
-
-puts '*************VAUES AFTER MOVE RIGHT***********'
-rover2.rover_instructions('MMRMMRMRRM')
-puts rover2.render_specific_attr('x')
-puts rover2.render_specific_attr('y')
-puts rover2.render_specific_attr('p')
+second_rover = Rover.new('3 3 E')
+second_rover.rover_instructions('MMRMMRMRRM')
+puts second_rover.render_specific_attr('x')
+puts second_rover.render_specific_attr('y')
+puts second_rover.render_specific_attr('p')
 
 print '5 1 E'
