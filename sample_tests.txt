@@ -1,0 +1,33 @@
+
+rover = Rover.new('1 2 N')
+rover.rover_instructions('LMLMLMLMM')
+# 0 2 W
+# 0 1 S
+# 1 1 E
+# 1 3 N
+puts rover.render_specific_attr('x')
+puts rover.render_specific_attr('y')
+puts rover.render_specific_attr('p')
+
+print '1 3 N'
+puts ''
+
+# 1 2 N
+
+# LMLMLMLMM
+
+# 1 3 N output one
+
+# 3 3 E
+
+# MMRMMRMRRM
+
+# 5 1 E output 2
+
+second_rover = Rover.new('3 3 E')
+second_rover.rover_instructions('MMRMMRMRRM')
+puts second_rover.render_specific_attr('x')
+puts second_rover.render_specific_attr('y')
+puts second_rover.render_specific_attr('p')
+
+print '5 1 E'
